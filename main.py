@@ -214,7 +214,7 @@ while calculator == 1:
       calcProgram(calcType)
     elif option == "element":
       print('''
-  -----                                                          -----
+  -----                                                               -----
 1 | H |                                                               |He |
   |---+----                                       --------------------+---|
 2 |Li |Be |                                       | B | C | N | O | F |Ne |
