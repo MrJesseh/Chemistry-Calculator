@@ -1,6 +1,6 @@
 # This program is designed to do stoichiometry problems for chemistry class.
-
-
+from errors import errorMessage
+from element import periodicTable
 # Sets this variable to 1.  It's just a constant.
 calculator = 1
 
@@ -144,8 +144,9 @@ while calculator == 1:
       number2 = input("Enter the second number: ")
       # handles divide by zero error.
       if int(number2) == 0:
-        print("Cannot divide by zero.")
-        pass
+        errorType = "divzero"
+        errorMessage(errorType)  
+      
       else:
         quotnum = float(number1) / float(number2)
         print("The quotient is: ", str(quotnum))
@@ -213,28 +214,7 @@ while calculator == 1:
       calcType = input("What calculation do you want to do? ")
       calcProgram(calcType)
     elif option == "element":
-      print('''
-  -----                                                               -----
-1 | H |                                                               |He |
-  |---+----                                       --------------------+---|
-2 |Li |Be |                                       | B | C | N | O | F |Ne |
-  |---+---|                                       |---+---+---+---+---+---|
-3 |Na |Mg |3B  4B  5B  6B  7B |    8B     |1B  2B |Al |Si | P | S |Cl |Ar |
-  |---+---+---------------------------------------+---+---+---+---+---+---|
-4 | K |Ca |Sc |Ti | V |Cr |Mn |Fe |Co |Ni |Cu |Zn |Ga |Ge |As |Se |Br |Kr |
-  |---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
-5 |Rb |Sr | Y |Zr |Nb |Mo |Tc |Ru |Rh |Pd |Ag |Cd |In |Sn |Sb |Te | I |Xe |
-  |---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
-6 |Cs |Ba |LAN|Hf |Ta | W |Re |Os |Ir |Pt |Au |Hg |Tl |Pb |Bi |Po |At |Rn |
-  |---+---+---+------------------------------------------------------------
-7 |Fr |Ra |ACT|
-  -------------
-              -------------------------------------------------------------
-   Lanthanide |La |Ce |Pr |Nd |Pm |Sm |Eu |Gd |Tb |Dy |Ho |Er |Tm |Yb |Lu |
-              |---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
-   Actinide   |Ac |Th |Pa | U |Np |Pu |Am |Cm |Bk |Cf |Es |Fm |Md |No |Lw |
-              -------------------------------------------------------------
-      ''')
+      periodicTable()
       whatsyourelement()
     elif option == "mole bridge":
       print('''
@@ -252,8 +232,7 @@ while calculator == 1:
     else:
       print("You did not enter an accepted value.")
 
-  # List of Chemical Symbols, corresponds with list of element names
-  chemSymb = ['Jc`  ', 'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 'Al', 'Si', 'P', 'S', 'Cl', 'Ar', 'K', 'Ca', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Kr', 'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Xe', 'Cs', 'Ba', 'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu', 'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg', 'Tl', 'Pb', 'Bi', 'Po', 'At', 'Rn', 'Fr', 'Ra', 'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am', 'Cm', 'Bk','Cf', 'Es', 'Fm', 'Md', 'No', 'Lr', 'Rf', 'Db', 'Sg', 'Bh', 'Hs', 'Mt', 'Ds', 'Rg', 'Cn', 'Nh', 'Fl', 'Mc', 'Lv', 'Ts', 'Og', 'Jw']
+ 
 
   # List of Element names, corresponds with list of Chemical Symbols
   chemName = ['Josh Conklin','Hydrogen', 'Helium', 'Lithium', 'Beryllium', 'Boron', 'Carbon', 'Nitrogen', 'Oxygen', 'Fluorine', 'Neon', 'Sodium', 'Magnesium', 'Aluminum', 'Silicon', 'Phosphorus', 'Sulfur', 'Chlorine', 'Argon', 'Potassium', 'Calcium', 'Scandium', 'Titanium', 'Vanadium', 'Chromium', 'Manganese', 'Iron', 'Cobalt', 'Nickel', 'Copper', 'Zinc', 'Gallium', 'Germanium', 'Arsenic', 'Selenium', 'Bromine', 'Krypton', 'Rubidium', 'Strontium', 'Yttrium', 'Zirconium', 'Niobium', 'Molybdenum','Technetium', 'Ruthenium', 'Rhodium', 'Palladium', 'Silver', 'Cadmium', 'Indium', 'Tin', 'Antimony', 'Tellurium', 'Iodine', 'Xenon', 'Caesium', 'Barium', 'Lanthanum', 'Cerium', 'Praseodymium', 'Neodymium', 'Promethium', 'Samarium', 'Europium', 'Gadolinium', 'Terbium', 'Dysprosium', 'Holmium', 'Erbium', 'Thulium', 'Ytterbium', 'Lutetium', 'Hafnium', 'Tantalum', 'Tungsten', 'Rhenium', 'Osmium', 'Iridium', 'Platinum', 'Gold', 'Mercury', 'Thallium', 'Lead', 'Bismuth', 'Polonium', 'Astatine', 'Radon', 'Francium', 'Radium', 'Actinium', 'Thorium', 'Protactinium', 'Uranium', 'Neptunium','Plutonium', 'Americium', 'Curium', 'Berkelium', 'Californium', 'Einsteinium', 'Fermium', 'Mendelevium', 'Nobelium', 'Lawrencium', 'Rutherfordium', 'Dubnium', 'Seaborgium', 'Bohrium', 'Hassium', 'Meitnerium', 'Darmstadtium', 'Roetgenium', 'Copernicium', 'Nihonium', 'Flerovium', 'Moscovium', 'Livermorium', 'Tennessine','Oganessan','Jesse Wright']
