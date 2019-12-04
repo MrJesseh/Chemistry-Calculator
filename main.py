@@ -1,5 +1,5 @@
 # This program is designed to do stoichiometry problems for chemistry class.
-
+# It has a variety of functions.
 
 # Sets this variable to 1.  It's just a constant.
 calculator = 1
