@@ -1,4 +1,4 @@
-# This program is designed to do stoichiometry problems for chemistry class.
+# This program is designed to do stoichiometry problems for chemistry class
 
 
 # Sets this variable to 1.  It's just a constant.
