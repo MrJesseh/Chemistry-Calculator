@@ -81,6 +81,7 @@ while calculator == 1:
       # Calculates molar Molar Mass.
       output = float(moles) * float(molarMassA)
       print("The molar mass is: ", str(output))
+      print("The equation is: ", str(moles), "moles A", "x", str(molarMassA), "grams A", "=", str(output))
       if molarMassA in molarMass:
         findMass = molarMass.index(molarMassA)
         giveName = chemName[findMass]
@@ -93,6 +94,8 @@ while calculator == 1:
       # Calculates the mass.
       moles = float(massA) / float(molarMassA)
       print("The amount of moles of the substance is: ", str(moles))
+      # Gives the equation for a mass to moles type problem.
+      print("The equation is: ", str(massA), "grams A", "/", str(molarMassA), "grams/mole A", "=", str(moles))
     elif problemType == "mass to mass":
       # Gets user inputs about the problem.
       massA = input("Enter the mass of the substance: ")
@@ -109,7 +112,15 @@ while calculator == 1:
       molarMassB = input("Enter the molar mass of substance B: ")
       # Calculates mass.
       massB = float(molesB) * float(molarMassB)
+      # Prints the output of the equation for mass.
       print("The mass of substance B is: ", str(massB))
+      # Prints out the equations for the user to see.
+      # Is able to print out all of the conversions, rather than just one long one.
+      print("For this problem there are a couple of equations!")
+      print("Changing mass A to moles A: ", str(massA), "grams A", "/", str(molarMassA), "grams/mole A", "=", str(molesA))
+      print("Changing moles A to moles B: ", str(molesA), "moles A", "x", "(", str(coEffB), "moles B", "/", str(coEffA), "moles A", ")", "=", str(molesB))
+      print("Changing moles B to mass B: ", str(molesB), "moles B", "x", str(molarMassB), "grams/mole B", "=", str(massB))
+
       if molarMassA in molarMass:
         findMassA = molarMass.index(molarMassA)
         findMassB = molarMass.index(molarMassB)
