@@ -1,5 +1,4 @@
 # This program is designed to do stoichiometry problems for chemistry class.
-
 # Imports functions from other files for use.
 from errors import errorMessage
 from element import periodicTable
@@ -15,19 +14,19 @@ calculator = 1
 while calculator == 1:
   def startUp():
     print('''
-    ---------------------------------
-      Super Easy Chemistry Program
-    ---------------------------------
-    Accepted Inputs:
-
-    stoich calc
-    calculator (for two numbers)
-    element
-    mole bridge (WIP)
-
-    --------------------------------
-    Note: These are case sensitive.
-    --------------------------------
+    -----------------------------------
+    --  Super Easy Chemistry Program --
+    -----------------------------------
+    ---      Accepted Inputs        ---
+    -----------------------------------                    
+    ---        stoich calc          ---
+    --- calculator (for two numbers)---
+    ---         element             ---
+    ---     mole bridge (WIP)       ---
+    ---                             ---
+    -----------------------------------
+    - Note: These are case sensitive. -
+    -----------------------------------
     ''')
     # Adds a new line.
     print(" ")

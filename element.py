@@ -1,3 +1,5 @@
+import time
+import sys
 def periodicTable():
   print('''
   -----                                                               -----
@@ -65,6 +67,25 @@ def whatsyourElement():
     print('''
     
     ''')
-
+    helpful = input("Did you find what you needed? ")
+  if helpful == "no":
+    periodicTable()
+    whatsyourElement()
+  else:
+    load = 1
+#here is the animation
+    while load < 5:
+      sys.stdout.write('\rloading |')
+      time.sleep(0.1)
+      sys.stdout.write('\rloading /')
+      time.sleep(0.1)
+      sys.stdout.write('\rloading -')
+      time.sleep(0.1)
+      sys.stdout.write('\rloading \\')
+      time.sleep(0.1)
+      load = load + 1
+    sys.stdout.write('\rDone!     ')
+      
+      
 # List of Element names, corresponds with list of Chemical Symbols
   

@@ -6,12 +6,16 @@ def stoichCalc(problemType):
       moles = input("Enter moles of substance A: ")
       coEffA = input("Enter the coefficient of substance A: ")
       coEffB = input("Enter the coefficient of substance B: ")
-      # Calculates conversion factor based on Coefficients.
-      conversionFactor = float(coEffB) / float(coEffA)
-      # Calculates the output moles.
-      output = float(moles) * float(conversionFactor)
-      print("The amount of moles of substance B is: ", str(output))
-      print("The equation would be: ", str(moles), " moles A", "x", "(", str(coEffB), "moles B", "/", str(coEffA), "moles A",")", "=", str(output))
+      if coEffA == "0":
+        errorType = "divzero"
+        errorMessage(errorType)
+      else:
+        # Calculates conversion factor based on Coefficients.
+        conversionFactor = float(coEffB) / float(coEffA)
+        # Calculates the output moles.
+        output = float(moles) * float(conversionFactor)
+        print("The amount of moles of substance B is: ", str(output))
+        print("The equation would be: ", str(moles), " moles A", "x", "(", str(coEffB), "moles B", "/", str(coEffA), "moles A",")", "=", str(output))
     elif problemType == "moles to mass":
       # Gets the numbers from the user.
       moles = input("Enter moles of the substance: ")
@@ -31,18 +35,23 @@ def stoichCalc(problemType):
       massA = input("Enter the mass of the substance: ")
       molarMassA = input("Enter the molar mass of the substance: ")
       # Calculates the mass.
-      molesA = float(massA) / float(molarMassA)
-      # Gets more inputs.
-      coEffA = input("Enter the coefficient of substance A: ")
-      coEffB = input("Enter the coefficient of substance B: ")
-      conversionFactor = float(coEffB) / float(coEffA)
-      # Calculates the output moles.
-      molesB = float(molesA) * float(conversionFactor)
-      # More inputs
-      molarMassB = input("Enter the molar mass of substance B: ")
-      # Calculates mass.
-      massB = float(molesB) * float(molarMassB)
-      print("The mass of substance B is: ", str(massB))
+      if molarMassA == "0":
+        errorType = "divzero"
+        errorMessage(errorType)
+      else:
+
+        molesA = float(massA) / float(molarMassA)
+        # Gets more inputs.
+        coEffA = input("Enter the coefficient of substance A: ")
+        coEffB = input("Enter the coefficient of substance B: ")
+        conversionFactor = float(coEffB) / float(coEffA)
+        # Calculates the output moles.
+        molesB = float(molesA) * float(conversionFactor)
+        # More inputs
+        molarMassB = input("Enter the molar mass of substance B: ")
+        # Calculates mass.
+        massB = float(molesB) * float(molarMassB)
+        print("The mass of substance B is: ", str(massB))
     elif problemType == "dihydrogen monoxide":
       print("water")
     else:
