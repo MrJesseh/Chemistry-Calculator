@@ -7,6 +7,10 @@ from chemcalc import stoichCalc
 from chemcalc import moleBridge
 from chemcalc import calcProgram
 from spooky import skeleton
+import sys
+import time
+
+
 # Sets this variable to 1.  It's just a constant.
 calculator = 1
 
@@ -34,10 +38,10 @@ while calculator == 1:
   def calcOptions():
     if option == "stoich calc":
       print('''
-      -------------
-      Problem Types:
-      -------------
-      moles to moles
+      -----------------
+      --Problem Types--
+      -----------------
+      --moles to moles-
       moles to mass
       mass to moles
       mass to mass
@@ -81,7 +85,8 @@ while calculator == 1:
       skeleton()
       print("Spooky")
     else:
-      print("You did not enter an accepted value.")
+      errorType = "notacc"
+      errorMessage(errorType)
    
   # Asks the user what they want to use.
   option = input("What do you want to do? ")

@@ -55,7 +55,8 @@ def stoichCalc(problemType):
     elif problemType == "dihydrogen monoxide":
       print("water")
     else:
-      print("You did not enter an accepted value, press 'Run' to try again.")
+      errorType = "notacc"
+      errorMessage(errorType)
 def moleBridge(calcType):
   if calcType == "moles to atoms":
     # Asks user to input the number of moles.
@@ -78,6 +79,7 @@ def moleBridge(calcType):
     molarMass = input("Enter the molar mass: ")
     mass = float(moles) * float(molarMass)
     print("The mass is", str(mass))
+  
   elif calcType == "mass to atoms":
         # Asks for the amount of atoms
     mass = input("Enter the mass: ")
@@ -86,7 +88,10 @@ def moleBridge(calcType):
     moles = float(mass) / float(molarMass)
     # Calculates atoms
     atoms = float(moles) * float((6.022 * 10**23))
-    print("The amount of atoms is: ", str(atoms)) 
+    print("The amount of atoms is: ", str(atoms))
+  else:
+    errorType = "notacc"
+    errorMessage(errorType) 
 def calcProgram(calcType):
     if calcType == "add":
       number1 = input("Enter the first number: ")
@@ -115,5 +120,6 @@ def calcProgram(calcType):
         quotnum = float(number1) / float(number2)
         print("The quotient is: ", str(quotnum))
     else:
-      print("You did not enter an accepted value.")
+      errorType = "notacc"
+      errorMessage(errorType)
 
